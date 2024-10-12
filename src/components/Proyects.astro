@@ -1,0 +1,78 @@
+---
+import NodeIcon from "../icons/NodeJs.astro";
+import ExpressIcon from "../icons/Express.astro";
+import ReactIcon from "../icons/React.astro";
+import ReduxIcon from "../icons/Redux.astro";
+import TailwindIcon from "../icons/Tailwind.astro";
+
+const TAGS = {
+    NODEJS: {
+        name: "NodeJS",
+        class: "bg-[#003159] text-white",
+        icon: NodeIcon,
+    },
+    EXPRESS: {
+        name: "Express",
+        class: "bg-[#003159] text-white",
+        icon: ExpressIcon,
+    },
+    REACT: {
+        name: "React",
+        class: "bg-[#003159] text-white",
+        icon: ReactIcon,
+    },
+    REDUX: {
+        name: "Redux",   
+        class: "bg-[#003159] text-white",
+        icon: ReduxIcon,
+    },
+    TAILWIND: { 
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: TailwindIcon,
+    },
+};
+
+const PROYECTS = [
+    {
+        title: "FoodGlobal - Conectando mercados globales y facilitando alimentos internacionales.",
+        description:
+            "Plataforma de comercio electrónico que conecta supermercados y comercios locales de diferentes países, permitiendo a los usuarios comprar y enviar productos alimenticios a nivel internacional. Su objetivo es mejorar el acceso a alimentos de diversas regiones, facilitando la distribución en zonas necesitadas y promoviendo la diversidad culinaria global. En nuestro proyecto, utilizamos lenguajes de programación modernos y ampliamente adoptados en la industria  para garantizar una experiencia de usuario eficiente y personalizada.",
+        link: "https://svgl.vercel.app/",
+        github: "https://github.com/pheralb/svgl",
+        image: "/projects/foodglobal-image.webp",
+        tags: [
+            TAGS.NODEJS,
+            TAGS.EXPRESS,
+            TAGS.REACT,
+            TAGS.REDUX,
+            TAGS.TAILWIND,
+        ],
+    },
+];
+---
+
+{
+    PROYECTS.map(({ title, description, image, tags }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row mb-4">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex gap-x-2 rounded-full text-sm ${tag.class} py-1 px-2`}>
+                        <tag.icon class="size-6" />
+                        {tag.name}
+                    </span>
+                    </li>
+                ))}
+            </ul>
+            <img
+                class="rounded shadow-2xl shadow-white/20"
+                src={image}
+                alt={`Captura de pantalla del Proyecto ${title}`}
+            />
+        </article>
+    ))
+}
+

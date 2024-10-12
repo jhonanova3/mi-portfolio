@@ -1,0 +1,85 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Badge from "../components/Badge.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import portfolioImage from "../images/jhona-imagen.jpg";
+import SocialPill from "../components/SocialPill.astro";
+
+import LinkedInIcon from "../icons/LinkedIn.astro";
+import GitHubIcon from "../icons/GitHub.astro";
+import EmailIcon from "../icons/Email.astro";
+import Experience from "../components/Experience.astro";
+import Briefcase from "../icons/Briefcase.astro";
+import CodeIcon from "../icons/Code.astro";
+import Proyects from "../components/Proyects.astro";
+---
+
+<Layout
+	title="Portfolio de JhonaNova - Programador y Desarrollador Web"
+	description="Contrata a JhonaNova para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
+>
+	<main class="px-4">
+		<SectionContainer class="py-44 pb-32">
+			<img
+				class="rounded-full size-20 mb-6"
+				src={portfolioImage.src}
+				alt="Jhona foto"
+			/>
+			<h1
+				class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10"
+			>
+				👋 Soy Jhona <a
+					href="https://www.linkedin.com/in/jhonanova3/"
+					target="_blank"
+					rel="noopener"
+					class="flex
+					justify-center
+					items-center"
+					><Badge>Disponible para trabajar</Badge></a
+				>
+			</h1>
+			<h2 class="text-xl lg:text-2xl text-wrap max-w-[700px]">
+				<span class="text-yellow-300/80"
+					>Desarrollador Web Full Stack.</span
+				>
+				<span class="text-blue-300/80">De Montevideo, Uruguay.</span>
+				<span class="opacity-80"
+					>Transformando Ideas en Soluciones Digitales.</span
+				>
+			</h2>
+
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPill href="https://www.linkedin.com/in/jhonanova3/">
+					<LinkedInIcon class="size-4 md:size-6" />
+					LinkedIn
+				</SocialPill>
+
+				<SocialPill href="https://github.com/jhonanova3">
+					<GitHubIcon class="size-4 md:size-6" />
+					GitHub
+				</SocialPill>
+
+				<SocialPill href="mailto: jnova.devel@gmail.com">
+					<EmailIcon class="size-4 md:size-6" />
+					jnova.devel@gmail.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-3xl font-semibold opacity-80 mb-6 flex gap-x-4 items-center">
+				<Briefcase class="size-8"/>
+				Aprendizaje
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer class="py-10" id="proyectos">
+			<h2 class="text-3xl font-semibold opacity-80 mb-6 flex gap-x-4 items-center">
+				<CodeIcon class="size-8"/>
+				Proyectos
+			</h2>
+			<Proyects/>
+		</SectionContainer>
+	</main>
+</Layout>

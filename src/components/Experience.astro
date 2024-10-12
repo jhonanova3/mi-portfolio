@@ -1,0 +1,38 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+const EXPERIENCE = [
+{
+    date: "Actualmente...",
+    title: "Desarrollo Full Stack",
+    company: "Academia Henry",
+    description:
+      "Soy Desarrollador Full Stack egresado de la Academia Henry de Argentina, donde adquirí habilidades sólidas para desarrollar aplicaciones web modernas y escalables. A lo largo de mi formación, trabajé con diversas tecnologías, destacando en Backend: Node.js, Express, Sequelize. Frontend: React, Redux. Estilos: Tailwind CSS. Lógica y manejo de datos: JavaScript.",
+    link: "https://twitch.tv/midudev",
+  },
+  {
+    date: "Año 2023-2024",
+    title: "Desarrollo Full Stack",
+    company: "Academia Henry",
+    description:
+      "Soy Desarrollador Full Stack egresado de la Academia Henry de Argentina, donde adquirí habilidades sólidas para desarrollar aplicaciones web modernas y escalables. A lo largo de mi formación, trabajé con diversas tecnologías, destacando en Backend: Node.js, Express, Sequelize. Frontend: React, Redux. Estilos: Tailwind CSS. Lógica y manejo de datos: JavaScript.",
+    link: "https://d2rf2c6bvm78n9.cloudfront.net/new-cert?id=cfaee2c29385ccefba8457b2f1a5dd54a50dff860458cd46e106f017e6b4f66e",
+  },
+  {
+    date: "Año 2021-2022",
+    title: " Desarrollo Frontend",
+    company: "Jóvenes a Programar",
+    description:  
+"Egresé del Curso Jóvenes a Programar 2021-2022 de Uruguay como Desarrollador Web Junior, con un enfoque en frontend (HTML Y CSS) y lógica de programación, especialmente en JavaScript. Esta experiencia me permitió adquirir habilidades clave en tecnologías web, resolución de problemas y trabajo en equipo.",
+  },
+]
+---
+
+<ol class="relative mt-16">
+  {
+    EXPERIENCE.map((experience) => (
+      <li class="">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
